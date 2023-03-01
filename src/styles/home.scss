@@ -1,16 +1,90 @@
-#about {
-    gap: 5%;
-    .image{
-        width: 45%;
-        img{
-            object-fit: contain;
-            width: 100%;
+$orange: #fa8f21;
+$pink: #d82d7e;
+$purple: #8c3aaa;
+
+$blue: #4285f4;
+$green: #34a853;
+$lred: #ea4335;
+$dred: #c5221f;
+$yellow: #fbbc04;
+
+#hero {
+  .text {
+    .icons {
+      gap: 1rem;
+      padding: 2vw 0;
+    //   text-align: center;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: 0.5s all;
+        &.mail,
+        &.instagram {
+          fill: $main;
+          * {
+            transition: 0.5s all;
+          }
         }
+        &.instagram *{
+            stop-color: $main;
+        }
+        &:hover {
+          &.twitter {
+            fill: #1da1f2;
+          }
+          &.linkedin {
+            fill: #0e76a8;
+          }
+          &.github {
+            fill: #171515;
+          }
+          &.mail {
+            .blue {
+              fill: $blue;
+            }
+            .green {
+              fill: $green;
+            }
+            .lred {
+              fill: $lred;
+            }
+            .dred {
+              fill: $dred;
+            }
+            .yellow {
+              fill: $yellow;
+            }
+          }
+          &.instagram{
+            .orange{
+                stop-color: $orange;
+            }
+            .pink{
+                stop-color: $pink;
+            }
+            .purple{
+                stop-color: $purple;
+            }
+          }
+        }
+      }
     }
-    .text{
-        width: 40%;
-        // text-align: right;
+  }
+}
+
+#about {
+  gap: 5%;
+  .image {
+    width: 45%;
+    img {
+      object-fit: contain;
+      width: 100%;
     }
+  }
+  .text {
+    width: 40%;
+    // text-align: right;
+  }
   ul {
     text-align: right;
     li {
@@ -125,7 +199,7 @@
 // }
 
 #portfolio {
-   padding: 80px 0;
+  padding: 80px 0;
 
   h2 {
     text-align: center;
