@@ -17,7 +17,7 @@ const ProjectCard = ({ project, handleSelectTag }) => {
             href={project.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-          >
+          > 
             View Source
           </a>
         </div>
