@@ -3,7 +3,7 @@ import React from "react";
 const ProjectCard = ({ project, handleSelectTag }) => {
   return (
     <div className="project-card" key={project.id}>
-      <div className="img">
+      <div className="img flex justify-center align-center">
         <img src={project.image} alt={project.title} />
         <div className="button-group flex justify-evenly align-center">
           <a

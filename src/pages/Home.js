@@ -1,10 +1,29 @@
+import React, { useState, useEffect } from "react";
+
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+
+import data from "../data/data";
+import Card from "../components/ProjectCard";
 
 import avatar1 from "../images/avatar1.png";
 // import avatar2 from "../images/avatar2.png";
 import avatar2_1 from "../images/avatar2-1.png";
 
 function Home() {
+  const [shuffledData, setShuffledData] = useState([]);
+
+  useEffect(() => {
+    // Function to shuffle the data array randomly
+    const shuffleData = () => {
+      const shuffled = [...data];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      setShuffledData(shuffled);
+    };
+    shuffleData(); // Call the shuffleData function once on component mount
+  }, []);
   return (
     <main>
       <section id="hero" className="flex justify-center align-center wrap">
@@ -127,7 +146,7 @@ function Home() {
           <img src={avatar1} alt="Avatar" />
         </div>
       </section>
-      <section id="about" className="flex justify-center  wrap">
+      <section id="about" className="flex justify-center wrap">
         <div className="image">
           <img src={avatar2_1} alt="Avatar" />
         </div>
@@ -308,56 +327,11 @@ function Home() {
       <section id="portfolio">
         <div class="container">
           <h2>Portfolio</h2>
-          <p>Check out some of my personal projects.</p>
+          <h4>Check out some of my personal projects.</h4>
           <div class="portfolio-container">
-            <div class="portfolio-item">
-              <a href="project1.html">
-                <img
-                  src="https://images.unsplash.com/photo-1493119508027-2b584f234d6c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
-                  alt="Project 1"
-                />
-                <h3>Project 1</h3>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                porttitor ligula eget velit volutpat laoreet.
-              </p>
-              <a href="https://github.com/username/project1" target="_blank" rel="noreferrer">
-                View Source Code
-              </a>
-            </div>
-            <div class="portfolio-item">
-              <a href="project2.html">
-                <img
-                  src="https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80"
-                  alt="Project 2"
-                />
-                <h3>Project 2</h3>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                porttitor ligula eget velit volutpat laoreet.
-              </p>
-              <a href="https://github.com/username/project2" target="_blank" rel="noreferrer">
-                View Source Code
-              </a>
-            </div>
-            <div class="portfolio-item">
-              <a href="project3.html">
-                <img
-                  src="https://images.unsplash.com/photo-1610360655260-decd32e267aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                  alt="Project 3"
-                />
-                <h3>Project 3</h3>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-                porttitor ligula eget velit volutpat laoreet.
-              </p>
-              <a href="https://github.com/username/project3" target="_blank" rel="noreferrer">
-                View Source Code
-              </a>
-            </div>
+            {shuffledData.slice(0, 3).map((project) => (
+              <Card project={project} key={project.id} />
+            ))}
           </div>
         </div>
       </section>
