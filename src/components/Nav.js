@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BsSearch } from "react-icons/bs";
+// import { BsSearch } from "react-icons/bs";
 import { MdClose, MdMenu } from "react-icons/md";
 
 function Nav() {
@@ -92,10 +92,10 @@ function Nav() {
           <MdClose className="close" onClick={closeMenu} />
           <ul>
             <li>
-              <a href="/">About</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="/portfolio">Portfolio</a>
+              <a href="/projects">Portfolio</a>
             </li>
             <li>
               <a href="/contact">Contact</a>

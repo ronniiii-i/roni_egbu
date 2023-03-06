@@ -1,7 +1,7 @@
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
 
 import avatar1 from "../images/avatar1.png";
-import avatar2 from "../images/avatar2.png";
+// import avatar2 from "../images/avatar2.png";
 import avatar2_1 from "../images/avatar2-1.png";
 
 function Home() {
@@ -322,7 +322,7 @@ function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 porttitor ligula eget velit volutpat laoreet.
               </p>
-              <a href="https://github.com/username/project1" target="_blank">
+              <a href="https://github.com/username/project1" target="_blank" rel="noreferrer">
                 View Source Code
               </a>
             </div>
@@ -338,7 +338,7 @@ function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 porttitor ligula eget velit volutpat laoreet.
               </p>
-              <a href="https://github.com/username/project2" target="_blank">
+              <a href="https://github.com/username/project2" target="_blank" rel="noreferrer">
                 View Source Code
               </a>
             </div>
@@ -354,7 +354,7 @@ function Home() {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
                 porttitor ligula eget velit volutpat laoreet.
               </p>
-              <a href="https://github.com/username/project3" target="_blank">
+              <a href="https://github.com/username/project3" target="_blank" rel="noreferrer">
                 View Source Code
               </a>
             </div>
