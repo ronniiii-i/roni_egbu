@@ -1,6 +1,7 @@
 // import pages
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // import components
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/projects" element={<Portfolio />} />
+          <Route exact path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
