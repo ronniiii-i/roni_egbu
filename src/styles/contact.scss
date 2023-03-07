@@ -1,0 +1,47 @@
+// @import "../../node_modules/react-icons/fa";
+
+
+#contact {
+    .inner {
+        width: 50%;
+        margin: 2vw auto;
+
+        form {
+            width: 100%;
+            margin: 2vw auto;
+
+            * {
+                display: block;
+                width: 100%;
+                margin: 1vw 0;
+            }
+
+            input,
+            textarea {
+                padding: 1vw 2vw;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid $main;
+
+                &::placeholder {
+                    color: transparentize($color: $main, $amount: 0.4);
+                }
+            }
+
+            input:nth-child(1)::before {
+                content: "";
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background-image: url("~react-icons/fa/fa-search.svg");
+              }
+              
+
+            textarea {
+                min-height: 150px;
+                max-height: 250px;
+                resize: none;
+            }
+        }
+    }
+}

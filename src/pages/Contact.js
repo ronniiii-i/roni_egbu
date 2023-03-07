@@ -14,14 +14,19 @@ function Contact() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+    <section id="contact">
+      <div className="inner">
+        <h2>Get in touch</h2>
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="Input your name" value={username} onChange={(e) => setUsername(e.target.value)} />
 
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" placeholder="Now your Email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-      <textarea value={message} onChange={(e) => setMessage(e.target.value)} />
-      <button type="submit">Send Message</button>
-    </form>
+          <textarea placeholder="Finally your message" value={message} onChange={(e) => setMessage(e.target.value)} />
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
   );
 }
 
